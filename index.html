@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>I’d rather read the prompt</title>
+    <meta
+      name="description"
+      content="I’d rather read your original prompt and your own thoughts than plow through the AI slop you sent me."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="I’d rather read the prompt" />
+    <meta
+      property="og:description"
+      content="I’d rather read your original prompt and your own thoughts than plow through the AI slop you sent me."
+    />
+    <meta property="og:image" content="og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="I’d rather read the prompt" />
+    <meta
+      name="twitter:description"
+      content="I’d rather read your original prompt and your own thoughts than plow through the AI slop you sent me."
+    />
+    <meta name="twitter:image" content="og.png" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F2EEE6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1C1B19" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <p class="lede">
+        AI, make a page I can send people that tells them I’d rather read their
+        original prompt and their own intent than plow through the AI slop they
+        sent me. It’s annoying to read something they didn’t even read themselves,
+        and I’m not a fan of wasting my time going through a wall of text and
+        endless “it’s not just …, it’s …”.
+      </p>
+
+      <h1 class="tldr">I’d rather read the prompt.</h1>
+
+      <div class="actions">
+        <button
+          type="button"
+          class="copy-link"
+          id="copy-link"
+          data-idle="Copy link to send it to someone"
+          data-copied="Copied"
+        >
+          Copy link to send it to someone
+        </button>
+        <p class="visually-hidden" id="copy-status" role="status" aria-live="polite"></p>
+        <p class="copy-fallback" id="copy-fallback" hidden>
+          <label for="page-url">Link</label>
+          <input id="page-url" type="url" readonly />
+        </p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Inspired by
+        <a href="https://nohello.net" target="_blank" rel="noopener noreferrer">nohello</a>
+        ·
+        <a
+          href="https://claytonwramsey.com/blog/prompt/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Clayton Ramsey — I’d rather read the prompt</a
+        >
+        ·
+        Made by <a href="https://chekalsky.com" target="_blank">chekalsky.com</a>
+      </p>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <!-- 100% privacy-first analytics -->
+    <script
+      data-collect-dnt="true"
+      async
+      src="https://scripts.simpleanalyticscdn.com/latest.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="I'd rather read the prompt">
+  <style>
+    .bg { fill: #f2eee6; }
+    .mark { fill: #2c2a26; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1c1b19; }
+      .mark { fill: #e8e2d8; }
+    }
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <g class="mark">
+    <circle cx="11.25" cy="11" r="3.35"/>
+    <path d="M8 14.4 11.25 23h3.7L11.6 14.4z"/>
+    <circle cx="20.75" cy="11" r="3.35"/>
+    <path d="M17.5 14.4 20.75 23h3.7L21.1 14.4z"/>
+  </g>
+</svg>
