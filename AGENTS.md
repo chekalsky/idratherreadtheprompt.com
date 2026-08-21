@@ -59,9 +59,9 @@ Desktop: ≥70% of the page above the fold. Mobile: message/prompt block first.
 
 Voice: dry smug. Not hostile. Not a plea.
 
-### Motion (locked: A + E)
+### Motion (locked: F + E)
 
-No entrance animation. Page is still. Only the Copy link control may animate on success. Honor `prefers-reduced-motion: reduce` (instant final state).
+On load (when motion is allowed): only the tl;dr **“I’d rather read the prompt.”** types once, then stays. Main copy and Copy link are static. Copy link keeps success feedback. Honor `prefers-reduced-motion: reduce` (full phrase immediately, no caret). No JS → full text still visible.
 
 ### Sharing
 

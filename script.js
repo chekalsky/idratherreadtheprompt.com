@@ -3,6 +3,40 @@
   const fallback = document.getElementById("copy-fallback");
   const input = document.getElementById("page-url");
   const live = document.getElementById("copy-status");
+  const tldr = document.querySelector(".tldr");
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  const typePhrase = () => {
+    if (!tldr || prefersReducedMotion) return;
+
+    const text = tldr.textContent.replace(/\s+/g, " ").trim();
+    if (!text) return;
+
+    tldr.textContent = "";
+    tldr.classList.add("is-typing");
+
+    let index = 0;
+    const step = () => {
+      if (index < text.length) {
+        tldr.textContent = text.slice(0, index + 1);
+        index += 1;
+        const justTyped = text[index - 1];
+        const delay =
+          justTyped === " " ? 28 : justTyped === "." ? 80 : 42;
+        window.setTimeout(step, delay);
+        return;
+      }
+
+      tldr.classList.remove("is-typing");
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  typePhrase();
 
   if (!button) return;
 

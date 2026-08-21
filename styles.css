@@ -187,6 +187,27 @@ body {
   outline-offset: 3px;
 }
 
+.tldr.is-typing::after {
+  content: "";
+  display: inline-block;
+  width: 0.09em;
+  height: 1em;
+  margin-left: 0.1em;
+  vertical-align: -0.08em;
+  background: var(--ink);
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+.tldr.is-typing {
+  min-height: 1.25em;
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -194,5 +215,9 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .tldr.is-typing::after {
+    display: none;
   }
 }
