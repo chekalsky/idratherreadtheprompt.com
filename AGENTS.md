@@ -6,6 +6,19 @@ Static single-page site. No build step, no framework. Someone sends the link ins
 
 Files: `index.html`, `styles.css`, `script.js`, `favicon.svg`, `og.png` (source `og.svg`).
 
+## Cache bust
+
+`styles.css` and `script.js` are loaded with a shared query param in `index.html`:
+
+```html
+<link rel="stylesheet" href="styles.css?v=1" />
+<script src="script.js?v=1" defer></script>
+```
+
+**Current `v`:** `1`
+
+Whenever you change `styles.css` and/or `script.js`, **increment `v` by 1** on both hrefs in `index.html` and update **Current `v`** here. Do not leave stale `v` after an asset edit.
+
 ## Design lock
 
 Source of truth for look, copy, and behavior. Polish within this lock; do not invent a new metaphor or palette family.
@@ -88,6 +101,7 @@ Giant brand wordmark as hero · wordy manifesto · finger-wag tone · frameworks
 - [x] Desktop fold ≈ short page (≥70% visible); mobile leads with main copy
 - [x] No cards, purple chrome, hero wordmark, or cookie tracking (Simple Analytics OK)
 - [x] Opens via `file://` or any static server; no build step
+- [ ] Cache bust: if `styles.css` or `script.js` changed, `?v=` in `index.html` was incremented (and **Current `v`** in this file matches)
 
 On deploy: replace relative `og.png` / `twitter:image` with an absolute `https://…/og.png` URL.
 
@@ -96,7 +110,7 @@ On deploy: replace relative `og.png` / `twitter:image` with an absolute `https:/
 Run in order. Never start Implement before Design lock is settled.
 
 1. **Polish** — tighten strings/tokens inside the lock only. Done when lock matches files and type tokens are named in CSS.
-2. **Implement** — build static files + favicon + OG from the lock. Done when DoD items for layout, copy link, and theme pass.
+2. **Implement** — build static files + favicon + OG from the lock. Done when DoD items for layout, copy link, and theme pass. After any `styles.css` / `script.js` edit: bump shared `?v=` in `index.html` and **Current `v`** above.
 3. **Review** — semantics, contrast, focus, reduced motion, meta/OG, slop-design smell. Done when every DoD checkbox is checked or fixed.
 
 ## Out of scope
